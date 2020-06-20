@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="pane" nodeOrientation="LEFT_TO_RIGHT" styleClass="background" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="epicduels.controller.BattleCharacterController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox spacing="5.0">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label fx:id="userLabel" />
+                        <StackPane>
+                           <children>
+                              <ImageView fx:id="imageView" fitHeight="110.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="terminateImageView" fitHeight="110.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@images/Terminated.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox spacing="7.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox>
+                           <children>
+                              <StackPane alignment="CENTER_LEFT">
+                                 <children>
+                                    <ComboBox fx:id="characterComboBox" maxHeight="30.0" onAction="#selectCharacter" promptText="select character" />
+                                    <Label fx:id="characterLabel" style="-fx-font-size: 18;" visible="false">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <HBox alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="cancelLabel" onMouseEntered="#processCancelMouseEnter" onMouseExited="#processCancelMouseExit" onMousePressed="#processCancelSelected" onMouseReleased="#processCancelReleased" text="x" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <GridPane hgap="2.0" vgap="7.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+                            <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="hpLabel" text="HP 0000/0000" />
+                              <ProgressBar fx:id="hpProgressBar" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="70.0" progress="0.0" GridPane.columnIndex="1" />
+                              <Label fx:id="spLabel" text="SP 00/00" GridPane.rowIndex="1" />
+                              <ProgressBar fx:id="spProgressBar" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="70.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="limitLabel" text="Limit 0/10" GridPane.rowIndex="2" />
+                              <ProgressBar fx:id="limitProgressBar" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="70.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="timeLabel" text="Time" GridPane.rowIndex="3" />
+                              <ProgressBar fx:id="timeProgressBar" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="70.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <StackPane>
+                     <children>
+                        <Button fx:id="selectButton" onAction="#chooseCharacter" prefWidth="100.0" text="Select" visible="false" />
+                        <Label fx:id="damageLabel" visible="false" />
+                        <Label fx:id="recoveryLabel" />
+                     </children>
+                  </StackPane>
+                  <HBox fx:id="statusBox" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
