@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+    background-color: #1D222C;
+}
+
+.page {
+
+    font-weight: 400;
+    word-wrap: break-word;
+	max-width: 1200px; 
+	margin: auto;
+}
+
+.pane-title {
+	text-align: center;
+	font-weight: 300;
+	font-size: 100px;
+	color: white;
+	text-transform: uppercase;
+}
+
+.links {
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #008CBA;
+}
